@@ -1,0 +1,15 @@
+table,th,td{
+    border: 2px solid blue;
+    border-collapse: collapse;
+
+    
+
+}
+tr:nth-child(odd)
+{
+    background-color: blueviolet;
+}
+table:hover{
+    background-color: yellow;
+    color: violet;
+}

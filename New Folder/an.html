@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="an.css">
+</head>
+<body>
+    <div id="hi">
+        hi
+    </div>
+</body>
+</html>
+
+
+<Route
+  exact
+  path="/"
+  name="Login"
+  render={({ history }) =>
+    signIn.status === 1 ? (
+      <Redirect to="/dashboard" />
+    ) : (
+      <Container isNoPadding={true}>
+        <Login signIn={signIn} />
+      </Container>
+    )
+  }
+/>
+
+
+function Dashboard() {
+  const signIn = useSelector((state) => state.user.signIn);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUserData());
+  }, []);
+
+  const logout = () => {
+    dispatch(logoutUser());
+  };
+
+  if (!signIn.isAuthenticated) {
+    // Redirect to the home page if the user is not authenticated
+    return <Redirect to="/" />;
+  }
+
+  return (
+    <>
+      <h1>Welcome to the dashboard</h1>
+      <h5>Email: {signIn.email}</h5>
+      <h5>Username: {signIn.userName}</h5>
+      <button onClick={logout}>Logout</button>
+    </>
+  );
+}
+
+export default Dashboard;
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="option1" value="Option 1" onchange="showSelectedOptions('selected-options', this)">
+<label for="option1">Option 1</label>
+
+<input type="checkbox" id="option2" value="Option 2" onchange="showSelectedOptions('selected-options', this)">
+<label for="option2">Option 2</label>
+
+<input type="checkbox" id="option3" value="Option 3" onchange="showSelectedOptions('selected-options', this)">
+<label for="option3">Option 3</label>
+
+<div id="selected-options"></div>
+</body>
+<script>
+    function showSelectedOptions(displayId, checkbox) {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  
+  const selectedOptions = [];
+  
+  checkboxes.forEach(function(checkbox) {
+    if (checkbox.checked) {
+      selectedOptions.push(checkbox.value);
+    }
+  });
+  
+  const display = document.getElementById(displayId);
+  
+  display.innerHTML = selectedOptions.join(', ');
+}
+</script>
+</html>

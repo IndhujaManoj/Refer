@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function findDup(arr) {
+      let duplicates = [];
+      for (let i = 0; i < arr.length; i++) {
+        //let element = arr[i];
+        if (arr.indexOf(arr[i]) !== i && !duplicates.includes(arr[i])) {
+          duplicates.push(arr[i]);
+        }
+      }
+      console.log(duplicates)
+      return duplicates;
+    }
+    findDup([4, 5, 5, 7, 8, 9, 2, 4])
+
+  </script>
+</body>
+
+</html>

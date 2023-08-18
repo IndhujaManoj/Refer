@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hobbies</title>
+</head>
+<body>
+    <input type="text" id="hobby" placeholder="hobbies">
+    <button onclick="my_hobby()">go</button>
+    <p id="para"></p>
+</body>
+<script>
+
+    function my_hobby(){
+    let hobby=document.getElementById("hobby").value
+    let arr=[]
+
+    arr.push(hobby)
+    document.getElementById("para").innerHTML="my hobbies are : "+arr
+    }
+</script>
+</html>

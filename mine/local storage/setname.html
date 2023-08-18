@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example Page</title>
+	<script>
+		function storeName() {
+			const name = document.getElementById("nameInput").value;
+			localStorage.setItem("username", name);
+			alert(`Hello, ${name}! Your name has been stored.`);
+		}
+	</script>
+</head>
+<body>
+	<h1>Welcome to my page!</h1>
+	<label for="nameInput">Enter your name:</label>
+	<input type="text" id="nameInput">
+	<button onclick="storeName()">Store my name</button>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align:center;">Resume Generator</h1>
+
+    <label>Name:</label>
+    <input type="text" onkeyup="fun(0,'name',this.value)"><br><br>
+    <label>mail:</label>
+    <input type="text" onkeyup="fun(0,'mail',this.value)"><br><br>
+    <label>phone no:</label>
+    <input type="tel" onkeyup="fun(0,'phone',this.value)"><br><br>
+    <label>address:</label>
+    <address><input type="text" onkeyup="fun(0,'address:',this.value)"></address><br><br>
+    <label>objectives : </label>
+    <textarea onkeyup="fun(0,'objective:',this.value)"></textarea><br><br>
+
+    <h2>Skills</h2>
+    <input type="checkbox" id="option1" value="java" onchange="showSelectedOptions('selected-options', this)">
+    <label for="option1">java</label><br>
+
+    <input type="checkbox" id="option2" value="php" onchange="showSelectedOptions('selected-options', this)">
+    <label for="option2">php</label><br>
+
+    <input type="checkbox" id="option3" value=".net" onchange="showSelectedOptions('selected-options', this)">
+    <label for="option3">.net</label><br>
+
+    <input type="checkbox" id="option4" value="c" onchange="showSelectedOptions('selected-options', this)">
+    <label for="option2">c</label><br><br>
+
+    <label>hobbies : </label><input type="text" onkeyup="fun(1,'hobbies',this.value)"><br>
+
+
+    <h2>Education</h2>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Institute</th>
+                <th>Year</th>
+                <th>Mark in percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="text" placeholder="education name" onkeyup="getEducationValue(0,'name',this.value)">
+                </td>
+                <td><input type="text" placeholder="institute name name"
+                        onkeyup="getEducationValue(0,'institute',this.value)"></td>
+                <td><input type="text" placeholder="passed year" onkeyup="getEducationValue(0,'year',this.value)"></td>
+                <td><input type="text" placeholder="mark" onkeyup="getEducationValue(0,'mark',this.value)"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="text" placeholder="education name" onkeyup="getEducationValue(1,'name',this.value)">
+                </td>
+                <td><input type="text" placeholder="institute name"
+                        onkeyup="getEducationValue(1,'institute',this.value)"></td>
+                <td><input type="text" placeholder="passed year" onkeyup="getEducationValue(1,'year',this.value)"></td>
+                <td><input type="text" placeholder="mark" onkeyup="getEducationValue(1,'mark',this.value)"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="text" placeholder="education name" onkeyup="getEducationValue(2,'name',this.value)">
+                </td>
+                <td><input type="text" placeholder="institute name"
+                        onkeyup="getEducationValue(2,'institute',this.value)"></td>
+                <td><input type="text" placeholder="passed year" onkeyup="getEducationValue(2,'year',this.value)"></td>
+                <td><input type="text" placeholder="mark" onkeyup="getEducationValue(2,'mark',this.value)"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>personal Details :</h3>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>
+                <td><b>Father Name</b></td>
+                </th>
+
+                <td><input type="text" placeholder="father name" onkeyup="personal(0,'father name',this.value)"></td>
+            </tr>
+            <tr>
+                <th>
+                <td><b>Mother Name</b></td>
+                </th>
+                <td><input type="text" placeholder="mother name" onkeyup="personal(1,'mother name',this.value)"></td>
+
+            </tr>
+            <tr>
+                <th>
+                <td><b>Sibiling Name</b></td>
+                </th>
+                <td><input type="text" placeholder="sibiling name" onkeyup="personal(2,'sibiling name',this.value)">
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                <td><b>Marital Status</b></td>
+                </th>
+                <td><input type="text" placeholder="Marital status" onkeyup="personal(3,'marraige status',this.value)">
+                </td>
+
+            </tr>
+        </thead>
+    </table><br><br>
+
+    <div id="out"></div>
+</body>
+<script>
+    let my_resume = {}
+    let ind = []
+    function fun(i, name, value) {
+        my_resume[name] = value,
+            document.getElementById('out').innerHTML = name + ':' + value
+        display()
+    }
+    //skills
+
+
+    function showSelectedOptions(displayId, checkbox) {
+        const selectedOptions = [];
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+            if (checkbox.checked) {
+                selectedOptions.push(checkbox.value);
+            }
+            document.getElementById('out').innerHTML = displayId + ':' + checkbox
+        });
+
+        my_resume.MY_Skills = selectedOptions
+        display()
+    }
+    let education = [];
+    function getEducationValue(i, k, v) {
+        education[i] = {
+            ...education[i],
+            [k]: v
+        };
+        document.getElementById('out').innerHTML = k + ':' + v
+        my_resume.Education = education
+        display()
+    }
+
+    let per = []
+    function personal(i, k, v) {
+        per[i] = {
+            ...per[i],
+            [k]: v,
+
+        }
+        document.getElementById('out').innerHTML = k + ':' + v
+        my_resume.Personal_Details = per
+
+        display()
+
+    }
+    //hobbies
+    let hobbies = []
+    function hobby(splits) {
+        let hobby = splits.split(',')
+        for (i = 0; i < splits.length; i++) {
+            hobbies.push(splits[i])
+        }
+        return hobbies
+        document.getElementById('out').innerHTML = k + ':' + v
+        my_resume.my_hobby = hobbies
+        display()
+    }
+    function display(i, j, k) {
+
+        document.getElementById("out").innerHTML = JSON.stringify(my_resume)
+    }
+</script>
+
+</html>

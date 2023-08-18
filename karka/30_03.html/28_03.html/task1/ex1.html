@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>task1</title>
+</head>
+
+<body>
+    <button id="greetingButton">say greeting</button>
+    <p id="greetingParagraph"></p>
+    <script>
+        let greetingButton = document.getElementById('greetingButton')
+        let greetingParagraph = document.getElementById('greetingParagraph')
+        greetingButton.addEventListener("click", sayGreeting)
+        function sayGreeting() {
+            greetingParagraph.innerHTML = "welcome to exercise set 1"
+        }
+    </script>
+</body>
+
+</html>

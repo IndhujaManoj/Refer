@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>name : </label> <input type="text" id="name"> <br><br>
+    <label>phone no:</label><input type="tel" id="phone"><br><br>
+    <label>skill</label><br>
+
+    <input type="checkbox" value="js" name="skills"><label>js</label><br>
+    <input type="checkbox" value="c" name="skills"><label>c</label><br>
+    <input type="checkbox" value="java" name="skills"><label>java</label><br>
+    <input type="checkbox" value="PHP" name="skills"><label>PHP</label><br>
+    <input type="checkbox" value=".Net" name="skills"><label>.Net</label><br><br>
+    <label>Hobbies :</label>
+    <input type="text" placeholder="hobby" id="hobby"><br><br>
+
+    <table border=1>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Institute</th>
+                <th>passed year</th>
+                <th>Mark</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="text" placeholder="education name" onkeyup="educationValue(0,'name',this.value)"></td>
+                <td><input type="text" placeholder="institute name" onkeyup="educationValue(0,'institute',this.value)"></td>
+                <td><input type="text" placeholder="passed year" onkeyup="educationValue(0,'passed year',this.value)"></td>
+                <td><input type="text" placeholder="mark" onkeyup="educationValue(0,'Mark',this.value)"></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td><input type="text" placeholder="education name" onkeyup="educationValue(1,'name',this.value)"></td>
+                <td><input type="text" placeholder="institute name" onkeyup="educationValue(1,'institute',this.value)"></td>
+                <td><input type="text" placeholder="passed year" onkeyup="educationValue(1,'passed year',this.value)"></td>
+                <td><input type="text" placeholder="mark" onkeyup="educationValue(1,'Mark',this.value)"></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><input type="text" placeholder="education name" onkeyup="educationValue(2,'name',this.value)"></td>
+                <td><input type="text" placeholder="institute name" onkeyup="educationValue(2,'institute',this.value)"></td>
+                <td><input type="text" placeholder="passed year" onkeyup="educationValue(2,'passed year',this.value)"></td>
+                <td><input type="text" placeholder="mark" onkeyup="educationValue(2,'Mark',this.value)"></td>
+            </tr>
+
+
+        </tbody>
+    </table><br><br>
+    <code id="result"></code><br><br>
+
+
+    <button onclick="check()">submit</button>
+
+
+</body>
+<script>
+        let arr = []
+    
+        function check() {
+        let name = document.getElementById('name').value
+        let phone = document.getElementById('phone').value
+        //skill
+        let total = []
+        var ski = document.getElementsByName('skills')
+        var skill;
+        for (var i = 0; i < ski.length; i++) {
+            if (ski[i].checked) {
+                skill = ski[i].value
+                total.push(skill)
+            }
+
+        }
+        let my_hobby=hobby;
+        let new_hobb=my_hobby.split(',')
+        
+            
+            let details = {
+                name: name,
+                phone: phone,
+                skills: total,
+                education:education
+                
+            }
+            arr.push(details)
+            console.log(arr)
+        }
+
+      let education=[]
+      function educationValue(i,k,v){
+          education[i]={
+              ...education[i],
+              [k]:v
+          }
+         display()
+         education.concat(arr)
+      }
+    
+
+    
+      function display(){
+          document.getElementById('result').innerHTML=JSON.stringify(education)
+          
+      }
+       </script>
+
+ </html>

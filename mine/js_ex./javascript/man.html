@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>To-Do List</h2>
+        <input type="text" id="newTaskInput">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList">
+        </ul>
+      </div>
+</body>
+<script>
+    let taskList = document.getElementById("taskList");
+let newTaskInput = document.getElementById("newTaskInput");
+
+function addTask() {
+  if (newTaskInput.value === "") {
+    return;
+  }
+
+  let newTask = document.createElement("li");
+  newTask.innerHTML = newTaskInput.value;
+
+  let editButton = document.createElement("button");
+  editButton.innerHTML = "Edit";
+  editButton.onclick = function() {
+    editTask(newTask);
+  }
+
+  let deleteButton = document.createElement("button");
+  deleteButton.innerHTML = "Delete";
+  deleteButton.onclick = function() {
+    deleteTask(newTask);
+  }
+
+  newTask.appendChild(editButton);
+  newTask.appendChild(deleteButton);
+
+  taskList.appendChild(newTask);
+
+  newTaskInput.value = "";
+}
+
+function editTask(task) {
+  let currentTaskText = task.innerHTML;
+  let newTaskText = prompt("Enter new task:", currentTaskText);
+  if (newTaskText !== null && newTaskText !== "") {
+    task.innerHTML = newTaskText;
+  }
+  newTaskInput.value = newTaskText;
+}
+
+function deleteTask(task) {
+  task.parentNode.removeChild(task);
+}
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="boxButton">show message in box</button>
+    <div id="box"></div>
+    <script>
+        let boxButton=document.getElementById('boxButton')
+        let box=document.getElementById('box')
+        boxButton.addEventListener("click",showMessageInbox)
+        function showMessageInbox(){
+          box.innerHTML="welcome to message box"  
+        }
+    </script>
+</body>
+</html>

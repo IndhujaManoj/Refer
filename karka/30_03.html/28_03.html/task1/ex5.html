@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>task1</title>
+</head>
+
+<body>
+
+    <img src="cat.jpeg" id="cat">
+    <p id="catParagraph"></p>
+    <script>
+        let cat = document.getElementById("cat")
+        let catParagraph = document.getElementById("catParagraph")
+        cat.addEventListener("click", makeCatsound)
+        function makeCatsound() {
+            catParagraph.innerHTML = 'meow'
+        }
+    </script>
+</body>
+
+</html>

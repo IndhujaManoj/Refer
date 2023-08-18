@@ -1,0 +1,18 @@
+<html>
+
+<head></head>
+
+<body>
+    <button id="messageButton">show message</button>
+    <p id="messageParagraph"></p>
+    <script>
+        let messageButton = document.getElementById('messageButton')
+        let messageParagraph = document.getElementById('messageParagraph')
+        messageButton.addEventListener("click", showMessage)
+        function showMessage() {
+            messageParagraph.innerHTML = "welcome to karka academy"
+        }
+    </script>
+</body>
+
+</html>

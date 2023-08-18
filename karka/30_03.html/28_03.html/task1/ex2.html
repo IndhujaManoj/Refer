@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>task1</title>
+</head>
+
+<body>
+    <button id="jokeButton">Telljoke</button>
+    <p id="jokeParagraph"></p>
+    <script>
+        let jokeButton = document.getElementById('jokeButton')
+        let jokeParagraph = document.getElementById('jokeParagraph')
+        jokeButton.addEventListener("click", telljoke)
+
+        function telljoke() {
+            jokeParagraph.innerHTML = 'what do you call 2000 mockingbirds?'
+        }
+    </script>
+</body>
+
+</html>

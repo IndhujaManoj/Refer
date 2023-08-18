@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fibonacci(num) {
+            let i = 0;
+            let first = 0
+            let second = 1
+            console.log(first)
+            console.log(second)
+            while (i < num) {
+                let third = first + second;
+                console.log(third);
+                first = second;
+                second = third;
+                i++;
+
+            }
+        }
+        fibonacci(10)
+    </script>
+</body>
+
+</html>

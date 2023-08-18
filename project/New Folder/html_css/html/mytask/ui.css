@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: white;
+    color: black;
+text-align: center;
+width: 100%;
+padding-bottom: 3cm;
+}
+.link{
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: absolute;
+    top: 3.5cm;
+
+}
+section{
+    width: 100%;
+    background-color:gray;
+    color: black;
+    margin: 0 auto;
+    margin-top: 15px;
+
+}
+.title{
+    width: 100%;
+    background-color: white;
+    
+    
+}
+.image{
+    width: 95%;
+    background-color:grey;padding-bottom: 5cm;
+    margin: 0 auto;
+}
+.div{
+    width: 100%;
+    background-color: white;
+    margin-top: 15px;
+    
+}
+.img{
+    width: 95%;
+    background-color:grey;
+    margin: 0 auto;
+    padding-bottom: 4.5cm;
+}
+.about{
+    width: 22%;
+    background-color: white;
+    position: absolute;
+    bottom: 9cm;
+    
+    
+    
+}
+.in{
+    display: inline-block;
+    width: 75%;
+    margin: 0 auto;
+}
+.bl{
+    display: inline-block;
+    width: 20%;
+    margin: 0 auto;
+}
+.i{
+    width: 95%;
+    background-color:grey;
+    margin: 0 auto;
+    padding-bottom: 2cm;
+}
+.popular{
+    width: 22%;
+    background-color: white;
+    
+    position: absolute;
+    bottom: 1cm;
+    padding-bottom: 0.5cm;
+    margin-bottom: 0.5cm;
+}
+.mg{
+    width: 95%;
+    background-color: grey;
+    margin-bottom: 4cm;
+    margin: 0 auto;
+}
+.follow{
+    width: 22%;
+    background-color:white;
+    margin-bottom:4cm;
+    position: absolute;
+    bottom: -6cm;
+    
+    
+}
+.empty{
+    width: 22%;
+    color: grey;
+}
+footer{
+    width: 100%;
+    background-color: gray;
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+    
+    
+    
+}

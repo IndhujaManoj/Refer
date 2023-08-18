@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>my resume</h1>
+    <button onclick="resume()">show my resume</button><br><br>
+    <label>Name : </label><input type="" id="fname" placeholder="name"><br><br>
+    <label>mail : </label><input type="email" id="mail" placeholder="enter mail"> <br><br>
+    <label>date of birth :</label> <input type="date" id="date"><br><br>
+    <label>degree : </label><input type="text" id="degree" placeholder="degree"><br><br>
+    <label>percentage in degree : </label><input type="number" id="per_deg"><br><br>
+    <label>skills : </label><input type="text" id="skill">
+</body>
+<script>
+    
+    let my_resume=[]
+
+    function resume() {
+        let fname = document.getElementById('fname').value
+        let email=document.getElementById('mail').value
+       let date = document.getElementById('date').value
+        let degree = document.getElementById('degree').value
+        let per_deg = Number(document.getElementById('per_deg').value)
+        let skill= document.getElementById('skill').value
+        let new_resume={
+            name:fname,
+            email:email,
+            D_O_B:date,
+            degree:degree,
+            percentage_degree:per_deg,
+            skills:skill
+        }
+        my_resume.push(new_resume)
+        console.log(my_resume)
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    border: 5px solid black;
+    display: inline-grid;
+    grid-template-columns:repeat(3,100px);
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+    background-color:dimgrey;
+}
+.book{
+    font-size: 18px;
+    padding: 16px;
+    text-align: center;
+    justify-content: space-between;
+    background-color: gray;
+}

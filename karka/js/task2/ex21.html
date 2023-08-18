@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function binarySearch(arr, searchElement) {
+      let start = 0;
+      let end = arr.length - 1;
+
+      while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+
+        if (arr[mid] === searchElement) {
+          return mid;
+        } else if (arr[mid] < searchElement) {
+          start = mid + 1;
+        } else {
+          end = mid - 1;
+        }
+      }
+
+      return -1;
+    }
+    let index = binarySearch([2, 6, 10, 14, 18, 22, 26, 30, 34], 26)
+    console.log(index)
+  </script>
+</body>
+
+</html>

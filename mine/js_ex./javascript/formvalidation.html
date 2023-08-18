@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>
+           function form(){
+            var name=document.formvalidation.name.value;
+            var password=document.formvalidation.password.value;
+            if(name==null ||name==""){
+            alert("name cant be blank");
+            return false;
+           }
+            else if(password.length<6){
+            alert("password mustbe in atleast 6 char");
+            return false;
+            }
+           } 
+
+        </script>
+    </head>
+    <body>
+        <form name="formvalidation"method="post" action="http:\\www.javatpoint.com.jsp"
+        onsubmit="return validateform()">
+        name:<input type="text"name="name"><br><br>
+        password:<input type="password" name="password"><br><br>
+        <input type="submit" value="register">
+    </form>
+    </body>
+</html>

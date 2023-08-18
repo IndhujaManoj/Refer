@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <label>f_name: </label><input type="text" id="f_name" placeholder="first name"><br><br>
+    <label>l_name: </label><input type="text" id="l_name" placeholder="first name"><br><br>
+    <label>Gender : </label>
+    <select id="Gender">
+        <option>MALE</option>
+        <option>Female</option>
+    </select><br><br>
+    <label>skills</label><br>
+    <input type="checkbox" value="js" name="skills"><label>js</label><br>
+    <input type="checkbox" value="c" name="skills"><label>c</label><br>
+    <input type="checkbox" value="java" name="skills"><label>java</label><br><br>
+    <label>isMarried</label><br>
+
+
+    <div id="rates">
+        <input type="radio" id="yes" name="rate" value="yes"> yes
+        <input type="radio" id="no" name="rate" value="no" checked="checked"> no
+    </div><br><br>
+    <button onclick="details()">submit</button>
+</body>
+<script>
+    let arr = []
+    function details() {
+        let f_name = document.getElementById('f_name').value
+        // console.log("first name:", f_name)
+
+        let l_name = document.getElementById('l_name').value
+        let gender = document.getElementById('Gender').value
+
+
+        // skills 
+        let total = []
+        var ski = document.getElementsByName('skills')
+        var skill;
+        for (var i = 0; i < ski.length; i++) {
+            if (ski[i].checked) {
+                skill = ski[i].value
+                total.push(skill)
+            }
+
+        }
+
+        // married
+        var rates = document.getElementsByName('rate');
+        var married;
+        for (var i = 0; i < rates.length; i++) {
+            if (rates[i].checked) {
+                married = rates[i].value;
+            }
+        }
+        let user_details = {
+            first_name: f_name,
+            last_name: l_name,
+            gender: gender,
+            skills: total,
+            Ismarries: married
+        }
+        arr.push(user_details)
+        console.log(arr)
+    }
+
+
+</script>
+
+</html>

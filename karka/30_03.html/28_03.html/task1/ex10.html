@@ -1,0 +1,15 @@
+<html>
+    <head></head>
+    <body>
+        <button id="eraseButton">Erase Message</button>
+        <p id="messageDisplay">erase me</p>
+    </body>
+    <script>
+        let eraseButton=document.getElementById('eraseButton')
+let messageDisplay=document.getElementById('messageDisplay')
+eraseButton.addEventListener("click",eraseMessage)
+function eraseMessage(){
+    messageDisplay.innerHTML=''
+}
+    </script>
+</html>

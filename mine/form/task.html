@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="nameInput">
+          Name:
+          <input type="text" id="nameInput" />
+        </label>
+        <label for="ageInput">
+          Age:
+          <input type="number" id="ageInput" />
+        </label>
+        <label for="phoneInput">
+          Phone:
+          <input type="tel" id="phoneInput" />
+        </label>
+        <label for="emailInput">
+          Email:
+          <input type="email" id="emailInput" />
+        </label>
+        <label for="genderSelect">
+          Gender:
+          <select id="genderSelect">
+            <option value="">--Select Gender--</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <label for="htmlCheckbox">
+          Skills:
+          <input type="checkbox" id="htmlCheckbox" value="HTML" />
+          HTML
+        </label>
+        <label for="cssCheckbox">
+          <input type="checkbox" id="cssCheckbox" value="CSS" />
+          CSS
+        </label>
+        <label for="jsCheckbox">
+          <input type="checkbox" id="jsCheckbox" value="JavaScript" />
+          JavaScript
+        </label>
+        <button type="submit" id="submitButton">Submit</button>
+        <button type="button" id="clearButton">Clear</button>
+      </form>
+      
+      <table id="table" border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Skills</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+</body>
+<script src="task.js"></script>
+</html>

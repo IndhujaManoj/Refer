@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+
+<body>
+    <p>check which values are </p>
+    <input type="number" id='num' placeholder="enter numbers">
+    <button id="add">add</button>
+    <button id="submit">submit</button>
+    <button id="clean">clear</button>
+    <p id="para"></p>
+
+</body>
+<script>
+    let add = document.getElementById('add')
+    let submit = document.getElementById('submit')
+
+    add.addEventListener("click", addnum)
+    submit.addEventListener("click", sub)
+    clean.addEventListener("click", clear)
+
+
+    let arr = []
+    function addnum() {
+        let number = Number(document.getElementById('num').value)
+        arr.push(number)
+        console.log(arr)
+    }
+    function clear() {
+        num.value = ''
+        document.getElementById('para').innerHTML = ''
+
+    }
+
+    let above = []
+    function sub() {
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] >= 18) {
+                above.push(arr[i])
+
+            }
+
+        }
+        console.log("THE VALUES 18 AND 18 ABOVE ARE:", above)
+        document.getElementById('para').innerHTML = "THE VALUES 18 AND 18 ABOVE ARE: " + above
+    }
+
+
+</script>
+
+</html>

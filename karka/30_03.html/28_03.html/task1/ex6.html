@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>task1</title>
+</head>
+
+<body>
+
+    <img src="dog.jpeg" id="dog">
+    <p id="dogParagraph"></p>
+    <script>
+        let dog = document.getElementById('dog')
+        let dogParagraph = document.getElementById('dogParagraph')
+        dog.addEventListener("click", makeDogSound)
+        function makeDogSound() {
+            dogParagraph.innerHTML = "woof"
+        }
+    </script>
+</body>
+
+</html>

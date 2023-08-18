@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="language" value="malayalam"/><label>malayalam</label>
+    <input type="checkbox" name="language" value="tamil"/><label>tamil</label>
+    <input type="checkbox" name="language" value="english"/><label>english</label>
+
+<button onclick="show()">ok
+</button>
+</body>
+<script>
+    function show(){
+        let language=document.getElementsByName('language')
+        let arr=[];
+        let res;
+        for(let i=0;i<language.length;i++){
+            if(language[i].checked){
+                arr.push(language[i].value)
+            }
+        }
+        console.log(arr)
+    }
+</script>
+</html>

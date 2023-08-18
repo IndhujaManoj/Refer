@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function find(num){
+            let a=0;b=1;c=1;index=1;
+            while(c<num){
+                a=b;
+                b=c;
+                c=a+b;
+                index++;
+
+            }
+
+            if(c==num){
+                console.log("index of ",num, "in Fibonacci series is",index)
+            }
+            else{
+                console.log("element",num,"not present in fibonacci series")
+            }
+        }
+        find(3)
+    </script>
+</body>
+</html>

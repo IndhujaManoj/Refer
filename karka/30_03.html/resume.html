@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align:center;">Resume Generator</h1>
+
+    <label>name : </label><input type="text" id="name"> <br><br>
+    <label>mail:</label><input type="email" id="mail"><br><br>
+    <label>phone no:</label><input type="tel" id="phone"><br><br>
+    <label>address:</label>
+    <address><input type="text" id="address"></address><br><br>
+
+    <label>objectives : </label><textarea id="obj"></textarea><br><br>
+    <label>skill :</label><br>
+    <input type="checkbox" value="js" name="skills"><label>js</label><br>
+    <input type="checkbox" value="c" name="skills"><label>c</label><br>
+    <input type="checkbox" value="java" name="skills"><label>java</label><br>
+    <input type="checkbox" value="PHP" name="skills"><label>PHP</label><br>
+    <input type="checkbox" value=".Net" name="skills"><label>.Net</label><br><br>
+    <label>hobbies : </label><input type="text" id="hobby"><br><br>
+    <h3>Education Details :</h3>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Institute</th>
+                <th>passed year</th>
+                <th>Mark</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="text" placeholder="education name" onkeyup="educationValue(0,'name',this.value)"></td>
+                <td><input type="text" placeholder="institute name" onkeyup="educationValue(0,'institute',this.value)">
+                </td>
+                <td><input type="text" placeholder="passed year" onkeyup="educationValue(0,'passed year',this.value)">
+                </td>
+                <td><input type="text" placeholder="mark" onkeyup="educationValue(0,'Mark',this.value)"></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td><input type="text" placeholder="education name" onkeyup="educationValue(1,'name',this.value)"></td>
+                <td><input type="text" placeholder="institute name" onkeyup="educationValue(1,'institute',this.value)">
+                </td>
+                <td><input type="text" placeholder="passed year" onkeyup="educationValue(1,'passed year',this.value)">
+                </td>
+                <td><input type="text" placeholder="mark" onkeyup="educationValue(1,'Mark',this.value)"></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><input type="text" placeholder="education name" onkeyup="educationValue(2,'name',this.value)"></td>
+                <td><input type="text" placeholder="institute name" onkeyup="educationValue(2,'institute',this.value)">
+                </td>
+                <td><input type="text" placeholder="passed year" onkeyup="educationValue(2,'passed year',this.value)">
+                </td>
+                <td><input type="text" placeholder="mark" onkeyup="educationValue(2,'Mark',this.value)"></td>
+            </tr>
+
+
+        </tbody>
+    </table><br><br>
+    <h3>personal Details :</h3>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>
+                <td><b>Father Name</b></td>
+                </th>
+
+                <td><input type="text" placeholder="father name" onkeyup="personal(0,'father name',this.value)"></td>
+            </tr>
+            <tr>
+                <th>
+                <td><b>Mother Name</b></td>
+                </th>
+                <td><input type="text" placeholder="mother name" onkeyup="personal(1,'mother name',this.value)"></td>
+
+            </tr>
+            <tr>
+                <th>
+                <td><b>Sibiling Name</b></td>
+                </th>
+                <td><input type="text" placeholder="sibiling name" onkeyup="personal(2,'sibiling name',this.value)">
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                <td><b>Marital Status</b></td>
+                </th>
+                <td><input type="text" placeholder="Marital status" onkeyup="personal(3,'marraige status',this.value)">
+                </td>
+
+            </tr>
+        </thead>
+    </table><br><br>
+
+    <button onclick="check()">submit</button><br><br>
+
+    <div id="result"></div>
+
+
+
+</body>
+<script>
+    let arr = []
+
+    function check() {
+        let name = document.getElementById('name').value
+        let phone = document.getElementById('phone').value
+        let email = document.getElementById('mail').value
+        let hobby = document.getElementById('hobby').value
+        let obj = document.getElementById('obj').value
+        let address = document.getElementById('address').value
+
+        //skill
+        let total = []
+        var ski = document.getElementsByName('skills')
+        var skill;
+        for (var i = 0; i < ski.length; i++) {
+            if (ski[i].checked) {
+                skill = ski[i].value
+                total.push(skill)
+            }
+
+        }
+
+        //hobby
+
+        let my_hobby = hobby;
+        let new_hobb = my_hobby.split(',')
+        console.log(my_hobby)
+
+
+        //object all value
+
+        let details = {
+            name: name,
+            mail: email,
+            phone: phone,
+            skills: total,
+            education: education,
+            hobbies: new_hobb,
+            objective: obj,
+            address: address,
+            personal: per
+        }
+        arr.push(details)
+        //display()
+
+    }
+    //education
+    let education = []
+    function educationValue(a, b, c) {
+        education[a] = {
+            ...education[a],
+            [b]: c,
+
+        }
+        //display()
+
+        education.concat(arr)
+    }
+    //personal
+    let per = []
+    function personal(i, k, v) {
+        per[i] = {
+            ...per[i],
+            [k]: v,
+
+        }
+        per.concat(arr)
+        //display()
+
+    }
+
+
+    function display() {
+        document.getElementById('result').innerHTML = JSON.stringify(arr)
+
+
+
+    }
+</script>
+
+</html>

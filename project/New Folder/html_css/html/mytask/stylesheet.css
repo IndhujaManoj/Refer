@@ -1,0 +1,36 @@
+.header{
+    background-color: aqua;
+    text-align: center;
+    padding: 20px 0
+}
+.nav{
+    background-color: blue;
+    text-align: center;
+    padding: 15px 0;
+}
+.footer{
+    background-color: brown;
+    text-align: center;
+    padding:15px 0;
+}
+.section{
+    width: 80%;
+    margin: 20px auto;
+
+}
+.main{
+    background-color: gray;
+    display:inline-block;
+    width: 65%;
+    padding-bottom: 500px;
+    text-align: center;
+    
+
+}
+.side{
+    background-color: darkgray;
+    display: inline-block;
+    width: 30%;
+    padding-bottom: 500px;
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grade</title>
+</head>
+<body>
+    <input type="number" id="mark" placeholder="enter your mark">
+    <button onclick="grades()">grade</button>
+    <button onclick="clean()">clear</button>
+    <p id="para"></p>
+</body>
+<script>
+    
+    let mark=Number(document.getElementById('mark').value)
+    
+    let result
+    function grades(){
+        if(mark>=90){
+            result='grade is "A"'
+        }
+        else if(mark>=80 && mark<=89){
+            result='grade is "B"'
+        }
+        else if(mark>=70 && mark<=79){
+            result='grade is "C"'
+
+        }
+        else if(mark>=60 && mark<=69){
+            result='grade is "D"'
+
+    }
+    else{
+        result='Fail'
+    }
+    
+    document.getElementById('para').innerHTML=result
+    }
+    
+</script>
+</html>

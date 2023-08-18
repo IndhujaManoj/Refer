@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+*{
+    font-family: 'poppins' ,sans-serif;
+}
+
+.logs{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly; 
+        align-items: center;
+        margin-bottom: 30px;
+      
+      
+}
+.boxlogin{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.containerlogin{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 20px 15px;
+    border: 2px solid rgb(17, 184, 67);
+    border-radius: 20px;
+    margin-top: 100px;
+    background-color:rgb(23, 221, 49);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.containerlogin:hover {
+    transform: scale(1.1); 
+  }
+  
+ .spanlogin{
+    color: #131212;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+
+} 
+.header{
+    color: #0c0b0b;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+    
+}
+
+.input-fieldlogin .inputlog{
+    padding: 0 0 0 40px;
+    height: 45px;
+    border-radius: 20px;
+    margin: 10px;
+    outline: none;
+border: none;
+}
+.login .submitlogin:hover {
+    background-color: aqua;
+}
+
+
+.submitlogin{
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 85%;
+    color: black;
+    background: rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: .3s ;
+    margin-top: 5px;
+}
+.submitlogin:hover{
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}

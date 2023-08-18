@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgb(193, 193, 214);
+        }
+        #body {
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+            
+
+        }
+
+        #container {
+            text-align: center;
+            border: 2px solid black;
+            background-color: aqua;
+            display: block;
+
+        }
+
+        #unlike {
+            width: 50px;
+            height: 50px;
+            padding-left: 5px;
+            cursor: pointer;
+
+        }
+
+        #like {
+            cursor: pointer;
+
+        }
+
+       
+
+        #buttons {
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #head2 {
+            color: black;
+
+        }
+       /* #likes{
+            display: none;
+        }*/
+    </style>
+</head>
+
+<body>
+
+
+    <div id="show">
+    <div id="body">
+        <div id="container">
+        </div>
+    </div>
+    <div id="buttons">
+    <button id="head1" onclick="uptades()">Likes & unlike</button>
+</div>
+
+   <div id="likes"></div><br><br>
+</div>
+</body>
+<script>
+    let display = document.getElementById('container')
+    let likeArray = []
+    let unlikeArray=[]
+let lastClick=[]
+function uptades(){
+    let likesDiv = document.getElementById('likes')
+  let container = document.getElementById('container');
+  let likes = document.getElementById('likes');
+  likesDiv.innerHTML = `<p>Liked: ${likeArray.join(", ")}</p><p>Unliked: ${unlikeArray.join(", ")}</p>`
+  likesDiv.innerHTML=`<p>Liked: ${likeArray.join(", ")}</p><p>Unliked: ${unlikeArray.join(", ")}</p>`
+
+}
+
+
+
+
+
+
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://timesofindia.indiatimes.com/rssfeedstopstories.cms')
+        .then(response => response.json())
+        .then(data => {
+            let items = data.items;
+            let titles = ''
+            for (let i = 0; i < items.length; i++) {
+                titles += items[i].title + `<img src="like.png" id="like" class="like-btn"><img src="images.png" id="unlike" class="unlike-btn"></br> </br>`
+            }
+
+            display.innerHTML = titles
+
+            let like_btn = document.querySelectorAll('.like-btn')
+            like_btn.forEach(btn => {
+
+                btn.addEventListener('click', function () {
+                    let text = btn.previousSibling.textContent
+                    lastClick.push(text)
+                    if(!likeArray.includes(text)&&(!unlikeArray.includes(text))){
+                        likeArray.push(text)
+                    }
+
+                })
+            })
+            console.log(likeArray,"like")
+          /*  uptades()*/
+        
+            let unlike_btn = document.querySelectorAll('.unlike-btn')
+            unlike_btn.forEach(button=>{
+                button.addEventListener('click',function(){
+                    let unText=button.previousSibling.previousSibling.textContent
+                    lastClick.push(unText)
+
+                    if(!unlikeArray.includes(unText)&&(!likeArray.includes(unText))){
+
+                        unlikeArray.push(unText)
+                    }
+                })
+            })
+            console.log(unlikeArray,"un")
+      /*  uptades()*/
+
+
+        
+        })
+
+    
+        .catch(error => console.error(error));
+
+
+
+
+</script>
+
+
+
+</html>

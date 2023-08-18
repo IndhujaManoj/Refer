@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+function calculator()
+{
+var number1=parsefloat(prompt("enter the 1st number:"));
+var number2=parsefloat(prompt("enter the 2st number:"));
+var operator=prompt("enter the operator:");
+if(operator=='+')
+{
+document.write("the addition of "+number1+"and "+number 2+ "is"+(number1+number2));
+}
+
+else if(operator=='-')
+{
+document.write("the subtraction of "+number1+"and "+number 2+ "is"+(number1-number2));
+}
+
+if(operator=='*')
+{
+document.write("the mul of "+number1+"and "+number 2+ "is"+(number1*number2));
+}
+
+if(operator=='/')
+{
+document.write("the div of "+number1+"and "+number 2+ "is"+(number1/number2));
+}
+
+
+
+else
+{
+document.write("enter the valid no");
+}
+}
+</script>
+</head>
+<body>
+<h1>make simple calculator</h1>
+<button onclick="calculator()">calculator</button>
+</body>
+</html>

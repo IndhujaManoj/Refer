@@ -1,0 +1,36 @@
+.link{
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+.title{
+    width: 100%;
+}
+.image{
+    width: 70%;
+    height: 30%;
+    background-color: grey;
+    color: black;
+    margin-left: 15px;
+    
+}
+.blank{
+    width: 73%;
+    background-color: grey;
+    color: grey;
+}
+footer{
+    width: 70%;
+    color: black;
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+    background-color: gray;
+}
+.right{
+    width: 27%;
+    float: right;
+}
+.im{
+   color: black;
+   background-color: gray;
+}

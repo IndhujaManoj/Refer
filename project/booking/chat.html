@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seat Booking</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #seats-container{
+            border: 3px solid black;
+            display: inline-grid;
+            grid-template-columns:repeat(5,2fr);
+            align-items: center;
+            column-gap: 20px;
+            row-gap: 20px;
+            background-color:rgb(194, 189, 189);
+        }
+        .book {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            margin: 5px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            
+        }
+        #all{
+            
+            border: 5px solid black;
+            width: 500px;
+            position: relative;
+            left: 600px;
+            top: 50px;
+            text-align: center;
+        }
+        #center{
+            position: relative;
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div id="center">
+            <h1>Seat Booking</h1><br><br>
+            <form id="form1">
+                <h3>Name :<input type="text" id="name"></h3><br><br>
+                <h3>Required Seats:<input type="number" id="requiredSeats" > <br><br>
+                </h3>
+            </form>
+            
+            <div id="seats-container">
+                <div class="book seat1">1</div>
+                <div class="book seat2">2</div>
+                <div class="book seat3">3</div>
+                <div class="book seat4">4</div>
+                <div class="book seat5">5</div>
+                <div class="book seat6">6</div>
+                <div class="book seat7">7</div>
+                <div class="book seat8">8</div>
+                <div class="book seat9">9</div>
+                <div class="book seat10">10</div>
+                <div class="book seat11">11</div>
+                <div class="book seat12">12</div>
+                <div class="book seat13">13</div>
+                <div class="book seat14">14</div>
+                <div class="book seat15">15</div>
+                <div class="book seat16">16</div>
+                <div class="book seat17">17</div>
+                <div class="book seat18">18</div>
+                <div class="book seat19">19</div>
+                <div class="book seat20">20</div>
+            </div><br><br><br>
+            <button id="confirmBtn">Confirm</button><br><br>
+            <button onclick="clearForm()">Reset</button><br>
+            <form id="form2">
+                <h3>Total Tickets: <input type="text" id="num" readonly></h3><br><br>
+                <h3>Selected Seat Numbers: <input type="text" id="para" readonly></h3><br><br>
+                <h3 id="final"></h3>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    // Get all the seat elements
+const seats = document.querySelectorAll('.book');
+// Get the form elements
+const form1 = document.getElementById('form1');
+const form2 = document.getElementById('form2');
+// Get the input elements
+const nameInput = document.getElementById('name');
+const requiredSeatsInput = document.getElementById('requiredSeats');
+const numTicketsInput = document.getElementById('num');
+const selectedSeatsInput = document.getElementById('para');
+const finalMessage = document.getElementById('final');
+// Get the confirm button
+const confirmBtn = document.getElementById('confirmBtn');
+
+let selectedSeats = [];
+let numTickets = 0;
+
+// Add click event listener to each seat element
+seats.forEach(seat => {
+  seat.addEventListener('click', () => {
+    seat.classList.toggle('selected');
+    const seatNumber = seat.innerText;
+    if (selectedSeats.includes(seatNumber)) {
+      selectedSeats = selectedSeats.filter(seat => seat !== seatNumber);
+    } else {
+      selectedSeats.push(seatNumber);
+    }
+    numTickets = selectedSeats.length;
+    numTicketsInput.value = numTickets;
+    selectedSeatsInput.value = selectedSeats.join(', ');
+  });
+});
+
+// Add submit event listener to form1
+form1.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (numTickets === 0) {
+    alert('Please select at least one seat.');
+  } else if (numTickets < parseInt(requiredSeatsInput.value)) {
+    alert('You have not selected enough seats.');
+  } else {
+    form2.style.display = 'block';
+    finalMessage.textContent = `Thank you, ${nameInput.value}! You have successfully booked ${numTickets} tickets for seat(s) ${selectedSeats.join(', ')}.`;
+  }
+});
+
+// Function to reset the form
+function clearForm() {
+  form1.reset();
+  form2.style.display = 'none';
+  selectedSeats.forEach(seat => {
+    document.querySelector(`.seat${seat}`).classList.remove('selected');
+  });
+  selectedSeats = [];
+  numTickets = 0;
+  numTicketsInput.value = '';
+  selectedSeatsInput.value = '';
+  finalMessage.textContent = '';
+}
+</script>
+</html>

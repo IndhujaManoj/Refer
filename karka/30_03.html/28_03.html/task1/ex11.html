@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>task1</title>
+    </head>
+    <body>
+        <button id="changeButton">change my text</button>
+        <script>
+            let changeButton=document.getElementById('changeButton')
+            changeButton.addEventListener("click",changeText)
+            function changeText(){
+                changeButton.innerHTML="hi welcome"
+            }
+        </script>
+    </body>
+</html>

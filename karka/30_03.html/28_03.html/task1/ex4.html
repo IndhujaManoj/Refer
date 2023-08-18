@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>task1</title>
+</head>
+
+<body>
+
+    <p id="textParagraph">click me</p>
+
+</body>
+<script>
+    let textParagraph = document.getElementById('textParagraph')
+    textParagraph.addEventListener("click", changeText)
+    function changeText() {
+        textParagraph.innerHTML = 'Good Job!'
+    }
+</script>
+
+</html>

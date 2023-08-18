@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+    <h1>TO DO LIST</h1>
+    <input type="text" id="list">
+</form>
+    <button onclick="add(),clear()">ADD</button>
+    
+
+</body>
+<script>
+
+    var body=document.querySelector("body");
+    let arr=[];
+    function clear(){
+        form.reset()
+    }
+    function add(){
+        var list=document.getElementById("list",this).value;
+        //console.log(list)
+        
+        
+
+        //label used for the values of checkbox
+        var para = document.createElement("p");
+       para.innerHTML = list;
+       para.setAttribute('id',"paras")
+       body.appendChild(para);
+
+       let paras=document.getElementById('paras').innerHTML
+       console.log(paras)
+
+       //n1 is used as input type checkbox
+       var n1 = document.createElement("input")
+        n1.setAttribute("type","checkbox");
+        body.appendChild(n1);
+
+       
+        
+        //edit button is uesd to edit
+        var edit = document.createElement("button");
+        edit.innerHTML="EDIT";
+        body.appendChild(edit);
+
+        edit.addEventListener('click',()=>{
+            let pre=edit.previousElementSibling.value;
+            //console.log("pre",pre)
+            let name=document.getElementById('list');
+            name.value=pre;
+
+           // para.innerHTML=''
+    para.remove()
+           // let disable=edit.innerHTML
+            edit.remove();
+            dele.remove();
+            n1.remove();
+            var newValue=document.getElementById('list').value
+            para.getElementById('paras').value=newValue
+
+        
+        })
+
+        //dele button is used to delete
+        var dele = document.createElement("button");
+        dele.innerHTML="DELETE";
+        body.appendChild(dele);
+/*
+        var br1 =document.createElement("br");
+        body.appendChild(br1);
+
+             */   
+        clear()
+
+        
+       
+       
+        // arr.push(list)
+        // console.log(arr);
+        //form.reset();
+    } 
+    
+
+
+    
+    
+</script>
+</html>

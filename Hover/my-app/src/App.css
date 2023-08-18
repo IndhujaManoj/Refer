@@ -1,0 +1,67 @@
+/* .name {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.name::after {
+  content: '  Name:indhuja  Age:23 Degree:Btech';
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #46c2b3;
+  padding: 20px; 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: pre-line;
+  
+}
+
+.name:hover::after {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 40px;
+}
+
+.name:hover::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+} */
+.name {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.name::after {
+  content: attr(data-content);
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #46c2b3;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: pre-line;
+}
+
+.name:hover::after {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 40px;
+  font-size: 20px;
+}
+
+.name:hover::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  /* font-weight: bold; */
+}

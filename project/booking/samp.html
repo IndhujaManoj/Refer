@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seat Booking Page</title>
+    <style>
+        .book {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seat Booking Page</h1>
+    <div id="seatContainer">
+        <div class="book">1</div>
+        <div class="book">2</div>
+        <div class="book">3</div>
+        <div class="book">4</div>
+        <!-- Add more seat elements as needed -->
+    </div>
+    <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="requiredSeats">Required Seats:</label>
+        <input type="number" id="requiredSeats" required>
+        <input type="hidden" id="num" name="num">
+        <input type="hidden" id="para" name="para">
+        <button type="submit">Confirm Booking</button>
+    </form>
+    <pre id="final"></pre>
+
+    <script>
+       let seatElements = document.querySelectorAll('.book');
+let selectedSeats = [];
+
+seatElements.forEach(seat => {
+    seat.addEventListener('click', () => {
+        let seatNumber = seat.innerHTML; // clicked seat number
+        if (selectedSeats.length < Number(document.getElementById('requiredSeats').value)) {
+            if (!selectedSeats.includes(seatNumber)) {
+                seat.style.backgroundColor = 'yellow';
+                selectedSeats.push(seatNumber);
+            } else {
+                seat.style.backgroundColor = 'green';
+                selectedSeats = selectedSeats.filter(number => number !== seatNumber);
+            }
+        } else if (selectedSeats.includes(seatNumber)) {
+            seat.style.backgroundColor = 'green';
+            selectedSeats = selectedSeats.filter(number => number !== seatNumber);
+        }
+    });
+});
+
+document.getElementById('confirmBtn').addEventListener('click', () => {
+    let name = document.getElementById('name').value;
+    let requiredSeats = Number(document.getElementById('requiredSeats').value);
+    let selectedSeatsString = selectedSeats.join(', ');
+    let totalTickets = selectedSeats.length;
+
+    document.getElementById('num').value = totalTickets;
+    document.getElementById('para').value = selectedSeatsString;
+
+    document.getElementById('final').innerText = `Booking Details: \nName: ${name}\nRequired Seats: ${requiredSeats}\nSelected Seats: ${selectedSeatsString}\nTotal Tickets: ${totalTickets}`;
+
+    // Clear input fields
+    document.getElementById('name').value = '';
+    document.getElementById('requiredSeats').value = '';
+    //selectedSeats = [];
+    //seatElements.forEach(seat => {
+        //seat.style.backgroundColor = 'green';
+    });
+//});
+    </script>
+</body>
+</html>

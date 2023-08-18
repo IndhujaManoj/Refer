@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>enter month:</label>
+    <input type="number" id="month"><br><br>
+    <label>enter year:</label>
+    <input type="number" id="year"><br><br>
+    <div id="para"></div>
+
+    <button onclick="found()">ok</button>
+</body>
+<script>
+    
+    
+    function found() {
+        let year = Number(document.getElementById('year').value)
+    let month = Number(document.getElementById('month').value);
+        if (month == 2) {
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                para.innerHTML = 29
+            }
+            else {
+                para.innerHTML = 28
+            }
+        }
+        else if (month == 4 || month == 6|| month == 9 || month == 11) {
+            para.innerHTML = 30
+        }
+        else {
+            para.innerHTML = 31
+        }
+        
+        
+    }
+</script>
+
+</html>

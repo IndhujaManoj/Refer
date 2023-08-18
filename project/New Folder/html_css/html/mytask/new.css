@@ -1,0 +1,52 @@
+.header{
+    margin: 0;
+    background-color: grey;
+    height: 50px;
+    padding-top: 25px;
+}
+.nav{
+    margin-top: 6px;
+    background-color: blueviolet;
+    height: 50px;
+    padding-top: 25px;
+}
+.mid{
+
+    width: 100%;
+    padding: auto;
+    
+}
+.con{
+    width:20%;
+    background-color: grey;
+    height:12cm;
+    display: inline-block;
+    padding-top: 25px;
+    margin-top: 6px;
+    
+}
+.main{
+    width: 59%;
+    background-color: aqua;
+    height: 12cm;
+    display:inline-block;
+    padding-top: 25px;
+    margin-top: 6px;
+}
+.cont{
+    width: 20%;
+    background-color: brown;
+    height: 12cm;
+    display: inline-block;
+    padding-top: 25px;
+    margin-top: 6px;
+    
+    
+}
+.footer{
+    margin-top: 6px;
+    background-color: grey;
+    height: 50px;
+    padding-top: 25px;
+
+}   

@@ -1,0 +1,65 @@
+.dashed{
+    outline-color: brown;
+    outline-style: dashed;
+    border:5px solid green ;
+    float: left;margin: 10px;
+    padding: 10px;
+}
+.dotted{
+    outline-color: brown;
+    outline-style: dashed;
+    border:5px solid green ;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+.double{
+    outline-color: brown;
+    outline-style: dashed;
+    border:5px solid green ;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+.groove{
+    outline-color: brown;
+    outline-style: dashed;
+    border:5px solid green ;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+.inset{
+    outline-color: brown;
+    outline-style: dashed;
+    border:5px solid green ;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+.outset{
+    outline-color: brown;
+    outline-style: dashed;
+    border:5px solid green ;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+
+.ridge{
+    outline-color: brown;
+    outline-style: dashed;
+    border:5px solid green ;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+
+.solid{
+    outline-color: brown;
+    outline-style: dashed;
+    border:5px solid green ;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}

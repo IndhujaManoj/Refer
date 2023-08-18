@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#seats-container{
+    border: 3px solid black;
+    display: inline-grid;
+    grid-template-columns:repeat(5,2fr);
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+    background-color:rgb(194, 189, 189);
+}
+.book {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    
+}
+#all{
+    
+    border: 5px solid black;
+    width: 500px;
+    position: relative;
+    left: 600px;
+    top: 50px;
+    text-align: center;
+
+
+}
+#center{
+    position: relative;
+    background-color:pink;
+
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            background-image: url('./bg3.jpg');background-repeat: no-repeat;background-size:cover ;
+            margin: 100px 500px;
+        }
+
+        h1 {
+            margin-bottom: 0px;
+            text-align: center;
+            color: rgb(1, 1, 17);
+            background-color: rgb(120, 120, 227);
+        }
+
+        input {
+            background-color: rgb(163, 169, 169);
+            color: black;
+        }
+
+        form {
+            padding: 30px;
+            text-align:center;
+            background-color: rgb(255, 255, 255);
+        }
+
+        button {
+            color: burlywood;
+            background-color: brown;
+            height: 30px;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+        <h1>Register</h1>
+        <form id="form">
+            <div id="1">
+                <label>USERNAME : </label><input style="padding-left: 28px;" type="text" id="name">
+                <div id="n1" style="color: red"></div><br><br>
+            </div>
+    
+            <div id="2">
+                <label>EMAIL : </label><input type="email" id="mail">
+                <div id="n2" style="color: red"></div><br><br>
+            </div>
+    
+            <div id="3">
+                <label>PASSWORD : </label><input style="padding-left: -50px;" type="text" id="psw" >
+                <div id="n3" style="color: red"></div><br><br>
+            </div>
+    
+            <div id="4">
+                <label>RE-ENTER PASSWORD : </label><input type="text" id="new1">
+                <div id="n4" style="color: red"></div><br><br>
+            </div>
+    
+            <div id="5">
+                <label>PHONE NO : </label><input type="number" id="no" placeholder="Enter 10 digit Phone No">
+                <div id="n5" style="color: red"></div><br><br>
+            </div>
+        </form>
+        <div style="display: flex;justify-content: center;background-color: rgb(120, 120, 227);">
+            <button onclick="registration_form(event)">Submit</button>
+        </div> 
+        
+    </body>
+    <script>
+    
+
+
+
+
+if(!localStorage.getItem('register')){
+    localStorage.setItem('register',JSON.stringify([]))
+}
+function registration_form(event) {
+   event.preventDefault()
+    //username
+    var username = document.getElementById("name").value;
+    localStorage.setItem('userid',username)
+    var checkUsername = /^[a-zA-Z\s]/;
+    var valuate = checkUsername.test(username)
+    if (valuate == false) {
+        document.getElementById("n1").innerHTML = "Please enter a Valid Username"
+    }
+    else if(valuate == true){
+        document.getElementById("n1").innerHTML = ""
+    }
+
+    //email-id
+    var email = document.getElementById("mail").value;
+    let checkEmail = /^\S+@\S+\.\S/;
+    var valuate2 = checkEmail.test(email)
+    if (valuate2 == false) {
+        document.getElementById("n2").innerHTML = "Please enter a Valid mail-Id"
+    }
+    else if(valuate2== true){
+        document.getElementById("n2").innerHTML = ""
+    }
+
+    //password
+    var password = document.getElementById("psw").value;
+    localStorage.setItem('password1',password)
+    let checkPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&?])[A-Za-z\d#$@!%&?]{8,30}$/;
+    var valuate3 = checkPassword.test(password);
+    if (valuate3 == false) {
+        document.getElementById("n3").innerHTML = "*password must contain min 1('uppercase','lowercase','special charcter','no') & '8-30' characters."
+    }
+    else if(valuate3== true){
+        document.getElementById("n3").innerHTML = ""
+    }
+
+    //re-enter password
+    var repassword = document.getElementById("new1").value;
+    if (password != repassword || repassword=="") {
+        document.getElementById("n4").innerHTML = "please enter correct password"
+    }
+    else if(password== repassword){
+        document.getElementById("n4").innerHTML =""
+    }
+
+    //phone number
+    var phoneno = document.getElementById("no").value;
+    var checkPhoneno = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}/;
+    var valuate4 = checkPhoneno.test(phoneno);
+    if (valuate4 == false) {
+        document.getElementById("n5").innerHTML = "please enter your 10 digit mobile no without +91"
+    }
+    else if (valuate4== true){
+        document.getElementById("n5").innerHTML = ''
+    }
+
+     if(valuate== true && valuate2 == true && valuate3 ==true && valuate4==true && password == repassword ){
+         form.reset();
+        window.location.href="chat.html"
+        
+     }
+
+
+
+var userid=localStorage.getItem('userid')
+console.log(userid)
+var password1=localStorage.getItem('password1')
+console.log(password1)
+let storage=JSON.parse(localStorage.getItem('register'))
+storage.push({"id":userid,"pass":password1})
+console.log(storage)
+localStorage.setItem('register',JSON.stringify(storage))
+    }
+    </script>
+    </html>

@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    border: 5px solid black;
+    display: inline-grid;
+    grid-template-columns:repeat(5,50px);
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+    background-color:rgb(194, 189, 189);
+    
+}
+.book{
+    font-size: 18px;
+    padding: 16px;
+    text-align: center;
+    background-color: rgb(235, 226, 226);
+    
+}
+#all{
+    
+    border: 5px solid black;
+    width: 500px;
+    position: relative;
+    left: 600px;
+    top: 50px;
+    text-align: center;
+
+
+}
+#center{
+    position: relative;
+    background-color:pink;
+
+}
+.sm{
+ width: 20px;
+ height: 20px;
+ border: 1px solid black;   
+}
+
+
