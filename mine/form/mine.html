@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="name" placeholder="Enter your name" onkeypress="key(event)"/>
+        <input type="text" id="password" placeholder="Enter your password" onchange="change()"/>
+        <button id="submitButton" type="button" onclick="ok()">Submit</button>
+        <h1 id="h">hi</h1>
+        <p id="output"></p>
+        <div id="div"></div>
+    </form> 
+    <div class="container" id="container" style="height: 50px;width: 50px;background-color: blue;" onmouseover="color()" onmouseout="leave()">
+
+    </div>
+    <script>
+        function ok(){
+            var name = document.getElementById('name').value;
+            var output = document.getElementById('output');
+            output.innerHTML='NAME:'+name
+            let h=document.getElementById('h').innerText="hello"
+        }
+        function color(){
+            var container=document.getElementById('container')
+            container.style.backgroundColor='red'
+        }
+        function leave(){
+            var container=document.getElementById('container')
+            container.style.backgroundColor='blue'
+
+        }
+        function key(e){
+            console.log("key pressed",e.key)
+        }
+        function change(){
+            var div = document.getElementById('div');
+            var password = document.getElementById('password');
+            div.innerText = password.value;
+            console.log(password.value)
+        }
+    </script>
+</body>
+</html>

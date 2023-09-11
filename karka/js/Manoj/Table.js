@@ -7,4 +7,10 @@ function submit(){
    console.log(age)
    console.log(field)
 
+   var obj={
+    name:name,
+    age:age,
+    field:field
+   }
+   console.log(obj)
 }

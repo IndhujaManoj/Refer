@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Event Handling</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="name" placeholder="Enter your name"/>
+        <input type="text" id="password" placeholder="Enter your password"/>
+        <button id="submitButton" type="button">Submit</button>
+        <p id="output"></p>
+    </form>
+
+    <button id="clickMeButton">Click Me</button>
+    <p id="clickMePara">Button not clicked yet.</p>
+
+    <div id="hoverDiv" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+
+    <script>
+        // Form submission event handling
+        document.getElementById('submitButton').addEventListener('click', function() {
+            var name = document.getElementById('name').value;
+            var output = document.getElementById('output');
+            output.textContent = "Name: " + name;
+        });
+
+        // Mouse click event handling
+        document.getElementById('clickMeButton').addEventListener('click', function() {
+            var clickMePara = document.getElementById('clickMePara');
+            clickMePara.textContent = 'Button Clicked!';
+        });
+
+        // Mouse hover event handling
+        var hoverDiv = document.getElementById('hoverDiv');
+        hoverDiv.addEventListener('mouseover', function() {
+            hoverDiv.style.backgroundColor = 'lightgreen';
+        });
+
+        hoverDiv.addEventListener('mouseout', function() {
+            hoverDiv.style.backgroundColor = 'lightblue';
+        });
+
+        // Key press event handling
+        document.addEventListener('keydown', function(event) {
+            console.log(`Key pressed: ${event.key}`);
+        });f
+    </script>
+</body>
+</html>

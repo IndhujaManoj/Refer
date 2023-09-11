@@ -4,4 +4,7 @@ function hand(e) {
 
     e.preventDefault();
     console.log(name);
+    var obj={
+        name:name
+    }
 }

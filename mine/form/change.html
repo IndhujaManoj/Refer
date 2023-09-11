@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Value onchange Function</title>
+</head>
+<body>
+    <form>
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" onchange="displayMessage()" />
+    </form>
+    
+    <p id="message">Your entered name will be displayed here.</p>
+
+    <script>
+        function displayMessage() {
+            var nameInput = document.getElementById('nameInput');
+            var enteredName = nameInput.value;
+            var message = "You entered the name: " + enteredName;
+            var messageElement = document.getElementById('message');
+            messageElement.textContent = message;
+            
+        }
+    </script>
+</body>
+</html>
