@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+   color: white; 
+   text-align: center;
+}
+.heading{
+    background-color: rgb(6, 129, 6);
+    padding: 10px;
+}
+h2{
+    color: green;
+    
+}
+hr{
+    margin-top: 20px;
+}
+h3{padding-top: 20px;
+}
+.para1{
+    font-size: 20px;
+    padding-top: 20px;
+
+}
+.container{
+    padding-top: 20px;
+
+}
+.para2{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/* .table{
+    height: 50px;
+    border: 2px solid green;
+    padding-bottom: 500px;
+}
+.h-description{
+    padding-left: 300px;
+
+}
+.h-image{
+    padding-left: 1100px;
+}
+img{
+    height: 150px;
+    width: 150px;
+    padding-left: 300px;
+  
+}
+.tab1 .appleClass{
+    border: 2px solid rgb(233, 31, 31);
+}
+.appleClass{
+    border: 2px solid green;
+    margin-top: 50px;
+} */
+.table {
+    height: 50px;
+    border: 2px solid green;
+    padding-bottom: 500px;
+  }
+  
+  .h-description {
+    padding-left: 300px;
+  }
+  
+  .h-image {
+    padding-left: 1100px;
+  }
+  
+  img {
+    height: 150px;
+    width: 150px;
+    padding-left: 300px;
+  }
+  
+  .tab1 .appleClass {
+    border: 2px solid rgb(233, 31, 31);
+  }
+  
+  .appleClass {
+    border: 2px solid green;
+    margin-top: 50px;
+  }
+  

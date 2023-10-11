@@ -1,0 +1,7 @@
+div{
+    background: teal url('/food.jpeg') no-repeat;
+    background-attachment:fixed;
+    /* height: 100vh; */
+    background-size: 100%;
+    /* background-size: cover; */
+}

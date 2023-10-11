@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.comman-padding{
+    padding: 0px 200px;
+}
+.bloom{
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+.background{
+    background-color: #444447
+}
+.header{
+    background-color: rgb(219, 215, 215);
+}
+.btn-orange{
+    background: orange !important;
+}
+.img-food{
+    height: 300px;
+    width: 600px;
+}
+.displays{
+    display: flex;
+    justify-content: space-between !important;
+}
+.img-padding{
+    padding: 120px 0px;
+}
+.h3-padding{
+    padding: 13px;
+}
