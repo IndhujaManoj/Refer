@@ -8,7 +8,6 @@ let resume={
         //Location    :"Nagercoil",
 },
 objective:"To become a successfull professional in the field of Information Technology by utilizing my skills and enable further personal and professional development and work towards the growth of the organization.",
-
 education:[
 {
     Course    :"SSLC",
@@ -68,8 +67,8 @@ Family_Details:{
     Brother_name  :"Manoj kumar",
     Marital_status:false
 }
- } ; 
-    
+ }; 
+ console.log(resume)   
 
 //console.log(resume);
 /*console.log(resume.education[3])

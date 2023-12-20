@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Input Value Example</title>
+</head>
+<body>
+
+    <label for="userInput">Enter something:</label>
+    <input type="text" id="userInput" oninput="displayInputValue()">
+
+    <p id="displayValue">Input value will appear here.</p>
+    <script>
+        function displayInputValue() {
+            // Step 1: Get the <input> element
+            var inputElement = document.getElementById("userInput");
+
+            // Step 2: Get the value of the input
+            var inputValue = inputElement.value;
+
+            // Step 3: Display the input value
+            var outputElement = document.getElementById("displayValue");
+            outputElement.textContent = "Input value: " + inputValue;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    border: 2px solid black;
+    height: 900px;
+    width: 900px;
+}
+.header{
+    border: 2px solid black;
+    padding: 40px;
+    text-align: center;
+}
+.navigation{
+    border: 2px solid black;
+    text-align: center;
+    padding: 40px;
+}
+.section{
+    border: 2px solid black;
+   height: 300px;
+   width: 100%;
+}
+.footer{
+    border: 2px solid black;
+    text-align: center;
+    padding: 40px;
+}
+
+.index{
+display: inline-block;
+border: 2px solid rgb(206, 26, 26);
+padding-bottom: 280px;
+width: 20%;
+/* height: 300px; */
+text-align: center;
+
+
+}
+.content{
+    display: inline-block;
+   text-align: center;
+    width: 75%;
+}

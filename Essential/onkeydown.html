@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeydown Event Example</title>
+</head>
+<body>
+
+    <h1>Press a Key</h1>
+
+    <input type="text" id="keyInput" onkeydown="keyPressed(event)">
+
+    <script>
+        function keyPressed(event) {
+            // Display the key code when a key is pressed
+            alert('Key pressed! Key code: ' + event.keyCode);
+        }
+    </script>
+
+</body>
+</html>

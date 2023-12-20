@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seat Booking App</title>
+  <style>
+    .seat {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ccc;
+      margin: 5px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    .selected {
+      background-color: #3498db;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="seat" id="seat-1">1</div>
+<div class="seat" id="seat-2">2</div>
+<div class="seat" id="seat-3">3</div>
+<!-- ... add more seats as needed ... -->
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    
+    $(".seat").on("click", function() {
+      $(this).toggleClass("selected");
+
+      var seatNumber = $(this).attr("id").split("-")[1];
+
+     
+      console.log( seatNumber);
+      
+    });
+  });
+</script>
+
+</body>
+</html>

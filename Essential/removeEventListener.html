@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>removeEventListener Example</title>
+</head>
+<body>
+
+    <h1>Click the Button</h1>
+
+    <button id="myButton">Click me</button>
+    <script>
+        function clickHandler() {
+            alert('Button clicked!');
+        }
+
+        // Add the event listener
+        var button = document.getElementById('myButton');
+        button.addEventListener('click', clickHandler);
+
+        // After a certain condition, remove the event listener
+        setTimeout(function() {
+            button.removeEventListener('click', clickHandler);
+            alert('Event listener removed. The button will no longer show an alert on click.');
+        }, 5000); // Remove the event listener after 5 seconds
+    </script>
+
+</body>
+</html>
