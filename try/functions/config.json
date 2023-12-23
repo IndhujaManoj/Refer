@@ -1,8 +1,0 @@
-{
-    "jwt": {
-      "secret": "123"
-    },
-    "my_config_key": "123",
-    "api_key": "123"
-  }
-  
