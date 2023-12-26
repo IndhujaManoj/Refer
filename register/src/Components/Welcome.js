@@ -11,7 +11,7 @@ export const Welcome = () => {
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem('userData')) || [];
-    const currentUser = userData.find((item) => item.userName === 'username'); // Replace 'username' with the actual username
+    const currentUser = userData.find((item) => item.userName === 'username');
     setUser(currentUser);
   }, []);
 
