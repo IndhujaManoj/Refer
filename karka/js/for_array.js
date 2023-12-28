@@ -10,14 +10,12 @@ let names=[{
     place      :"nagercoil",
     education  :["BSC","MSC","MCA"],
     skill      :["cooking","reading","coading"]
-
 },
 {
     name       :"abinaya",
     place      :"vadasery",
     education  :["BCA","MCA","MSC"],
-    skill      :["cooking","reading"]
-      
+    skill      :["cooking","reading"] 
 },
 {
     name       :"pavithra",
