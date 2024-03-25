@@ -1,0 +1,28 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Example</title>
+</head>
+<body>
+    <div id="person-info">
+        <h1>Person Information</h1>
+        <p>Name: <span id="name"></span></p>
+        <p>Age: <span id="age"></span></p>
+        <p>City: <span id="city"></span></p>
+    </div>
+    <script>
+fetch('product.json')
+  .then(res => res.json())
+  .then(dat => {
+    document.getElementById('name').textContent = dat.name;
+    document.getElementById('age').textContent = dat.age;
+    document.getElementById('city').textContent = dat.city;
+  })
+  .catch(error => console.error('Error fetching JSON:', error));
+
+    </script>
+</body>
+</html>

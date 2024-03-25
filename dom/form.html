@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>HTML</label>
+    <input type="checkbox" value="html" class="checkbox"/>
+
+    <label>CSS</label>
+    <input type="checkbox" value="css" class="checkbox"/>
+    
+    <label>JS</label>
+    <input type="checkbox" value="js" class="checkbox"/>
+<button onclick="handleclk()">vv</button>
+</body>
+<script>
+    function handleclk(){
+        let checkboxValues = [];
+        let checkboxes = document.getElementsByClassName("checkbox");
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                checkboxValues.push(checkboxes[i].value);
+            }
+        }
+
+        console.log(checkboxValues);
+    }
+</script>
+</html>

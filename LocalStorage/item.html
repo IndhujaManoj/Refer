@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input Box Example</title>
+</head>
+<body>
+
+<h2>Input Box Example</h2>
+<input type="text" id="inputBox">
+<button onclick="addToLocalStorage()">Add to LocalStorage</button>
+
+<ul id="itemList"></ul>
+
+<script>
+// Function to add item to localStorage
+function addToLocalStorage() {
+    var value = document.getElementById("inputBox").value;
+    
+    var items = JSON.parse(localStorage.getItem("items")) || [];
+    
+    items.push(value);
+    
+    localStorage.setItem("items", JSON.stringify(items));
+    
+    document.getElementById("inputBox").value = "";
+    
+    displayItems(); 
+}
+
+function displayItems() {
+    var items = JSON.parse(localStorage.getItem("items")) || [];
+    var itemList = document.getElementById("itemList");
+
+    itemList.innerHTML = "";
+    
+    for (var i = 0; i < items.length; i++) {
+        var li = document.createElement("li");
+        li.textContent = items[i];
+        itemList.appendChild(li);
+    }
+}
+
+displayItems();
+</script>
+
+</body>
+</html>
