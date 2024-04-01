@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h1>Shopping Cart</h1>
+  <div id="cart-items"></div>
+</div>
+
+<script>
+  let cartItems = localStorage.getItem('cartItems');
+  cartItems = cartItems ? JSON.parse(cartItems) : [];
+
+  const cartItemsContainer = document.getElementById('cart-items');
+
+  for (let i = 0; i < cartItems.length; i++) {
+    const product = cartItems[i];
+
+    const itemDiv = document.createElement('div');
+    itemDiv.classList.add('card', 'mb-3');
+
+    itemDiv.innerHTML = `
+      <div class="card-body">
+        <h5 class="card-title">${product.Name}</h5>
+        <p class="card-text price">Price: ${product.price}</p>
+        <p class="card-text">${product.Description}</p>
+      </div>
+    `;
+
+    cartItemsContainer.appendChild(itemDiv);
+  }
+</script>
+</body>
+</html>

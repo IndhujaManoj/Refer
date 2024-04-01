@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Cards</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  /* Additional custom styling */
+  .card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+  }
+
+  .card-body {
+    border-bottom-right-radius: calc(0.25rem - 1px);
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }
+
+  .price {
+    font-weight: bold;
+    color: green;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="row" id="products-container"></div>
+</div>
+
+<script>
+  // Fetch the JSON data
+  fetch('your_json_file.json')
+    .then(response => response.json())
+    .then(data => {
+      const productsContainer = document.getElementById('products-container');
+
+      // Loop through each product and create a card
+      data.Products.forEach(product => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'mb-4');
+
+        card.innerHTML = `
+          <div class="card">
+            <img src="${product.Img}" class="card-img-top" alt="${product.Name}">
+            <div class="card-body">
+              <h5 class="card-title">${product.Name}</h5>
+              <p class="card-text price">Price: ${product.price}</p>
+              <p class="card-text">${product.Description}</p>
+            </div>
+          </div>
+        `;
+
+        productsContainer.appendChild(card);
+      });
+    })
+    .catch(error => console.error('Error fetching JSON:', error));
+</script>
+</body>
+</html>

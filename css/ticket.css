@@ -1,0 +1,99 @@
+.container {
+    height: 500px;
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+
+}
+
+.left {
+    height: 300px;
+    width: 70%;
+    background-image: url("./worldmap.png");
+    /* opacity:30px; */
+    background-size: cover;
+    /* border-top-left-radius: 5%; */
+    /* border-bottom-left-radius: 20px; */
+    /* position: relative; */
+}
+
+.right {
+    height: 300px;
+    width: 30%;
+    /* border: 0 20px 0 20px; */
+    /* border-top-right-radius: 5%; */
+    /* background-color: rgb(13, 49, 4); */
+}
+
+.header {
+    height: 25%;
+    background-color: rgb(18, 124, 196);
+    border-radius: 20px 0 0 0;
+    margin-top: -20px;
+    /* z-index: -1; */
+    /* position: relative; */
+
+}
+
+.body {
+    display: flex;
+    /* position: relative; */
+}
+
+.bording {
+    margin-left: 100px;
+}
+
+.airline {
+    margin-left: 100px;
+    margin-top: -20px;
+
+}
+.detailContainer{
+    /* background-color: blue; */
+}
+.details{
+    display: grid;
+    grid-template-columns: repeat(4,110px);
+    /* justify-content: end; */
+    height: 100px;
+    width: 100%;
+gap: 25px;
+}
+.barcode {
+    height: 140px;
+    transform: rotate(90deg);
+    /* position: absolute; */
+    /* left: -55px; */
+
+/* bottom: 35px; */
+}
+.bar{
+    /* background-color: yellow; */
+    width: 15%;
+    display: flex;
+    justify-content: center;
+
+}
+.headerLeft{
+    color: wheat;
+    width: 100%;
+    background-color: rgb(2, 2, 44);
+    height: 25%;
+    /* margin-top: -20px; */
+border-radius: 0 20px 0 0;
+display: flex;
+}
+.tok{
+    display: flex;
+}
+.london{
+    display: flex;
+
+}
